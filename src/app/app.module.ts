@@ -5,7 +5,8 @@ import { NgModule } from '@angular/core';
 import { APP_ROUTING } from "./app.routes";
 
 //Importo los Services
-import { SpotifyService } from "./services/spotify.service";
+import { ProductsService } from "./services/products.service";
+
 
 //Modulo de Http
 import { HttpClientModule } from "@angular/common/http";
@@ -15,16 +16,16 @@ import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { SearchComponent } from './components/search/search.component';
 import { HeaderComponent } from './components/shared/header/header.component';
+import { ShopComponent } from './components/shop/shop.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SearchComponent,
-    HeaderComponent
+    HeaderComponent,
+    ShopComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +34,7 @@ import { HeaderComponent } from './components/shared/header/header.component';
     FormsModule
   ],
   providers: [
-    SpotifyService
+    ProductsService
   ],
   bootstrap: [AppComponent]
 })

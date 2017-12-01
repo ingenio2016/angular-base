@@ -1,0 +1,86 @@
+<div class="container top-30">
+  <div class="row">
+    <div class="col-md-3">
+      <label for="termino">Search Product</label>
+      <input type="text" [(ngModel)]="termino" class="form-control" placeholder="Type the product name..."
+             (keyup.enter)="buscarProductos()">
+    </div>
+    <div class="col-md-9" *ngIf="termino.length > 1">
+      <h1>{{ termino }}</h1>
+      <hr style="color:white;">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-9">
+      <div class="container">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Stock</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of productList; let i = index">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ product.name }}</td>
+              <td>{{ product.price }}</td>
+              <td>{{ product.stock }}</td>
+              <td><button type="button" class="btn btn-outline-primary btn-block" (click)="comprar(product,i)">Add to Cart</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div *ngIf="shopcart != null" class="col-md-3">
+      <button style="cursor:pointer;" type="button" class="btn btn-default btn-block" data-toggle="modal" data-target=".bd-example-modal-lg" (click)="totalShopCart()">
+        <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> Added Products: <span *ngIf="shopcart">({{ shopcart.length }})</span>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<!-- BootstrapModal ShopCart -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <h2 class="text-center">ShopCart List Added</h2>
+      <hr>
+      <div *ngIf="shopcart" class="card">
+        <div class="card-body">
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let shop of shopcart; let i = index">
+                <td>{{ shop.name }}</td>
+                <td>{{ shop.cant }}</td>
+                <td>{{ shop.price | currency }}</td>
+                <td>{{ shop.price * shop.cant | currency }}</td>
+                <td><a type="button" class="btn" (click)="dropItem(shop, i)"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+              </tr>
+              <tr>
+                <td colspan="2"></td>
+                <td>Total Shop</td>
+                <td>{{ totalShop | currency }}</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
