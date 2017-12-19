@@ -1,0 +1,109 @@
+$maxWidthPercent: 100%;
+
+//Color vars
+$usersBackground: rgba(0,0,0,0.2);
+
+/* User Bar */
+.user-bar {
+  height: 60px;
+  background: $usersBackground;
+  color: #fff;
+  padding: 0 8px;
+  font-size: 24px;
+  position: relative;
+}
+
+.user-bar div {
+  float: left;
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+}
+
+.user-bar .avatar {
+  margin: 0 0 0 5px;
+  width: 50px;
+  height: 50px;
+}
+
+.user-bar .avatar img {
+  border-radius: 50%;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: block;
+  width: $maxWidthPercent;
+}
+
+.user-bar .name {
+  font-size: 17px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  letter-spacing: 0.3px;
+  margin: 0 0 0 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 110px;
+}
+
+//user items
+.user-item div {
+  float: left;
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+}
+
+.user-item .avatar {
+  margin: 0 0 0 5px;
+  width: 50px;
+  height: 50px;
+}
+
+.user-item .avatar img {
+  border-radius: 50%;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: block;
+  width: $maxWidthPercent;
+}
+
+.user-item .name {
+  text-overflow: ellipsis;
+  letter-spacing: 0.3px;
+  margin: 0 0 0 8px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.userlist ::-webkit-scrollbar {
+  transition: all .5s;
+  width: 5px;
+  height: 1px;
+  z-index: 10;
+}
+
+//users list
+
+#userlist ul
+{
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+#userlist li { margin: 0 0 .1em 0; }
+
+#userlist a
+{
+display: block;
+color: #000;
+background-color: transparent;
+width: $maxWidthPercent;
+height: 60px;
+padding: .2em .8em;
+text-decoration: none;
+}
+
+#userlist a:hover
+{
+background-color: $usersBackground;
+color: #000;
+}

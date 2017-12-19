@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import {ChatMessage} from '../interfaces/chatMessage.interface';
+import {User} from '../interfaces/user.interface';
 import { Router } from '@angular/router';
 
 //Login to provider
@@ -11,14 +12,17 @@ import * as firebase from 'firebase/app';
 export class ChatService {
 
   public chats:ChatMessage[]=[];
+
+  //chatTable
   private itemsCollection: AngularFirestoreCollection<ChatMessage>;
+  //usersTable
+  private usersCollection: AngularFirestoreCollection<User>;
   //user Data from provider
   public user:any = {};
   constructor( private afs:AngularFirestore,
                public afAuth: AngularFireAuth,
                private _router:Router) {
     this.afAuth.authState.subscribe(user=>{
-      console.log(user);
       if(!user){
         this._router.navigate( ['login'] );
         return;
@@ -34,6 +38,7 @@ export class ChatService {
 
   loadMessages(){
     this.itemsCollection = this.afs.collection<ChatMessage>('chats', ref => ref.orderBy('date', 'desc').limit(30));
+
     return this.itemsCollection.valueChanges()
                                .map((messages:ChatMessage[]) =>{
                                  this.chats=[];
@@ -45,13 +50,16 @@ export class ChatService {
   }
 
   sendMessage(texto:string){
-    let message:ChatMessage = {
-      name: 'Joel Ramirez',
-      message: texto,
-      date: new Date().getTime()
-    };
-
-    return this.itemsCollection.add( message );
+    if(!this.user){
+      return;
+    }else{
+      let message:ChatMessage = {
+        name: 'Joel Ramirez',
+        message: texto,
+        date: new Date().getTime()
+      };
+      return this.itemsCollection.add( message );
+    }
   }
 
   //Login Logout Endpoints

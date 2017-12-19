@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(provider:string){
-    this._cs.login(provider).then(()=>{
+    this._cs.login(provider).then((user)=>{      
       //inicialmente redireccionara a chats pero realmente sera a users
       this._router.navigate( ['chat'] );
     });
