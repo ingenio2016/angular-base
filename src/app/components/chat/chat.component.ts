@@ -13,7 +13,9 @@ export class ChatComponent implements OnInit {
     this._cs.loadMessages()
            .subscribe(()=>{
              setTimeout(()=>{
-               this.element.scrollTop = this.element.scrollHeight;
+               if(this.element.scrollHeight != undefined){
+                 this.element.scrollTop = this.element.scrollHeight;
+               }
              },20)
            });
   }

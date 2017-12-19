@@ -57,7 +57,7 @@ export class ChatService {
   //Login Logout Endpoints
   login(provider:string) {
   //Google Login
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
   logout() {
     this.afAuth.auth.signOut();

@@ -1,27 +1,32 @@
-# Whatsapp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.4.
+#Steps to run the application
 
-## Development server
+1. Necesary installs
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+  install node version 6.11.0 or higher and npm version 3.10.10 or higher from https://nodejs.org/es/download/
 
-## Code scaffolding
+2. Set up the Development Environment
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  npm install -g @angular/cli
 
-## Build
+3. Create a Folder and clone the project from GitHub
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+  git clone https://github.com/ingenio2016/angular-base.git
 
-## Running unit tests
+4. Navigate from the folder project
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  cd angular-base
 
-## Running end-to-end tests
+5. Switch to whatsapp branch
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+  git checkout whatsapp
 
-## Further help
+6. run npm install
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+7. Download the Environment files from https://drive.google.com/open?id=1ldhpSBSVozwa_xf06Te_l27kXlg3EgBb
+
+8. Replace the environment files on the path: src\environments
+
+9. run ng service
+
+10. open http://localhost:4200
