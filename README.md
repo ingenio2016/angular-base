@@ -27,6 +27,10 @@
 
 8. Replace the environment files on the path: src\environments
 
-9. run ng service
+9. install angularFire2 library
 
-10. open http://localhost:4200
+npm install angularfire2 firebase --save
+
+10. run ng serve
+
+11. open http://localhost:4200
