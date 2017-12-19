@@ -27,6 +27,6 @@
 
 8. Replace the environment files on the path: src\environments
 
-9. run ng service
+9. run ng serve
 
 10. open http://localhost:4200
