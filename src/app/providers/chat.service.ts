@@ -16,7 +16,6 @@ export class ChatService {
   // FireBase Collections
   // Chat Collection
   chatsCollection: AngularFirestoreCollection<any>;
-  // chatObservable = this.chatsCollection.valueChanges();
 
   // User Collection
   userCollection: AngularFirestoreCollection<any> = this.afs
@@ -75,13 +74,13 @@ export class ChatService {
     return this.userToChat = userChat;
   }
 
-  sendMessage(texto: string) {
+  sendMessage(texto: string, receiver: string) {
     if (!this.user) {
       return;
     }
     const message: any = {
       emitter: this.user.uid,
-      receiver: this.userToChat.uid,
+      receiver: receiver,
       message: texto,
       date: new Date().getTime()
     };
@@ -98,7 +97,6 @@ export class ChatService {
 
     registerUser( userInfo: any ) {
     if (userInfo) {
-      console.log(userInfo);
       let user:any = {
         uid: userInfo.uid,
         name: userInfo.displayName,
@@ -117,7 +115,7 @@ export class ChatService {
   }
 
   logout(user: any) {
-    console.log(user);
+
     this.userCollection.doc(this.user.userid).delete()
       .then(() => {
         console.log('user deleted');

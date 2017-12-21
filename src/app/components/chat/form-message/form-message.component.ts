@@ -13,11 +13,11 @@ export class FormMessageComponent implements OnInit {
   ngOnInit() {
   }
 
-  send_message() {
+  send_message(receiver: string) {
     if (this.message.length === 0) {
       return;
     }
-    this._chatService.sendMessage( this.message )
+    this._chatService.sendMessage( this.message, receiver )
       .then(() => {
         console.log('the message has sent');
         this.message = '';
