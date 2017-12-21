@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatService } from '../../../providers/chat.service';
 
 @Component({
   selector: 'app-form-message',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-message.component.scss']
 })
 export class FormMessageComponent implements OnInit {
-
-  constructor() { }
+  message = '';
+  constructor( private _chatService: ChatService ) { }
 
   ngOnInit() {
   }
 
+  send_message() {
+    if (this.message.length === 0) {
+      return;
+    }
+    this._chatService.sendMessage( this.message )
+      .then(() => {
+        console.log('the message has sent');
+        this.message = '';
+      }).catch((err) => {
+      console.error('Error. The message has not sent. Please Verify', err);
+    });
+  }
 }

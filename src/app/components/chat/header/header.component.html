@@ -1,13 +1,13 @@
-<div class="user-bar">
+<div class="user-bar" *ngIf="_chatService.userToChat.name">
   <div class="avatar">
-    <img [src]="_chatService.user.photo" alt="Avatar">
+    <img [src]="_chatService.userToChat.photo" alt="Avatar">
   </div>
   <div class="name">
-    <span>Joel Ramirez</span>
+    <span>{{ _chatService.userToChat.name }}</span>
     <span class="status">online</span>
   </div>
 
   <div class="actions">
-    <i (click)="logout()" class="zmdi zmdi-account-box"></i>
+    <i (click)="logout(_chatService.user)" class="zmdi zmdi-account-box"></i>
   </div>
 </div>

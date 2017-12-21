@@ -7,10 +7,32 @@ import { ChatService } from '../../../providers/chat.service';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-
-  constructor( private _chatService: ChatService ) { }
+  private users: any[] = [];
+  public user: any[] = [];
+  constructor( private _chatService: ChatService ) {
+    this._chatService.loadUsers()
+      .subscribe((users) => {
+        this.users = users;
+      });
+  }
 
   ngOnInit() {
   }
 
+  loadChat(user: any) {
+    if (!user) {
+      return;
+    }
+    this._chatService.loadChatUser(user);
+
+    // Load Chat Conversation
+    this._chatService.loadMessages()
+      .subscribe((chats) => {
+        /*setTimeout(() => {
+          if (this.scrollElement.scrollHeight != undefined) {
+            this.scrollElement.scrollTop = this.scrollElement.scrollHeight;
+          }
+        }, 20);*/
+      });
+  }
 }

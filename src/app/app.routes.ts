@@ -5,7 +5,6 @@ import { UsersComponent} from './components/chat/users/users.component';
 
 const APP_ROUTES: Routes = [
   { path: 'login', component: LoginComponent},
-  { path: 'users', component : UsersComponent},
   { path: 'chat', component : ChatComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'login'}
 ];

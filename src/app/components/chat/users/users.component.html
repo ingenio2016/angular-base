@@ -6,38 +6,14 @@
 <div class="user-list-container">
 <div class="userlist" id="userlist">
 <ul>
-<li>
-  <div class="user-item">
-    <a href="#">
+<li *ngFor="let user of users">
+  <div *ngIf="user.uid !== _chatService.user.uid" class="user-item">
+    <a (click)="loadChat(user)">
       <div class="avatar">
-        <img src="https://avatars2.githubusercontent.com/u/398893?s=128" alt="Avatar">
+        <img [src]="user.photo" alt="Avatar">
       </div>
       <div class="name">
-        <span>Joel Ramirez</span>
-      </div>
-    </a>
-  </div>
-</li>
-<li>
-  <div class="user-item">
-    <a href="#">
-      <div class="avatar">
-        <img src="https://avatars2.githubusercontent.com/u/398893?s=128" alt="Avatar">
-      </div>
-      <div class="name">
-        <span>Marcos Rangel</span>
-      </div>
-    </a>
-  </div>
-</li>
-<li>
-  <div class="user-item">
-    <a href="#">
-      <div class="avatar">
-        <img src="https://avatars2.githubusercontent.com/u/398893?s=128" alt="Avatar">
-      </div>
-      <div class="name">
-        <span>Jose García</span>
+        <span>{{ user.name }}</span>
       </div>
     </a>
   </div>

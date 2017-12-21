@@ -36,7 +36,7 @@ import { FormMessageComponent } from './components/chat/form-message/form-messag
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
     APP_ROUTING,
     FormsModule

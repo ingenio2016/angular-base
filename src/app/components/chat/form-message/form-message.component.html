@@ -1,4 +1,4 @@
-<form class="conversation-compose">
+<form class="conversation-compose" *ngIf="_chatService.userToChat.name">
   <div class="emoji">
   </div>
   <input type="text" class="input-msg" name="message" [(ngModel)]="message" placeholder="Type a message" autocomplete="off" autofocus>

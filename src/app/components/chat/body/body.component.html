@@ -1,4 +1,7 @@
-<div class="conversation-container" id="messages-list">
+<div class="conversation-container" id="messages-list" *ngIf="_chatService.userToChat.name">
+  <div>
+
+  </div>
   <div class="message sent" *ngFor="let chat of _chatService.chats">
     {{chat.message}}
   </div>
