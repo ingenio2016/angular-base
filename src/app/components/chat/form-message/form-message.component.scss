@@ -1,0 +1,52 @@
+/* Compose */
+//Vars
+$maxWidthPercent: 100%;
+.conversation-compose {
+  $inputBackground: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  overflow: hidden;
+  height: 50px;
+  width: $maxWidthPercent;
+  z-index: 2;
+  input {
+    background: $inputBackground;
+    height: $maxWidthPercent;
+  };
+  .input-msg {
+    border: 0;
+    flex: 1 1 auto;
+    font-size: 16px;
+    margin-left: 10px;
+    outline: none;
+    min-width: 50px;
+  };
+  .send {
+    $circleImgBackground: #008a7c;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    flex: 0 0 auto;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 0;
+    position: relative;
+    outline: none;
+    .circle {
+      background: $circleImgBackground;
+      border-radius: 50%;
+      color: #fff;
+      position: relative;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      i {
+        font-size: 24px;
+        margin-left: 5px;
+      }
+    }
+  }
+}

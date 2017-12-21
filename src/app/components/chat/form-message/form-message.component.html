@@ -1,0 +1,10 @@
+<form class="conversation-compose">
+  <div class="emoji">
+  </div>
+  <input type="text" class="input-msg" name="message" [(ngModel)]="message" placeholder="Type a message" autocomplete="off" autofocus>
+  <button (click)="send_message()" class="send">
+    <div class="circle">
+      <i class="zmdi zmdi-mail-send"></i>
+    </div>
+  </button>
+</form>

@@ -9,14 +9,19 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private _cs:ChatService, private _router:Router) { }
+  constructor(private _cs: ChatService, private _router: Router) { }
 
   ngOnInit() {
   }
 
-  login(provider:string){
-    this._cs.login(provider).then((user)=>{      
-      //inicialmente redireccionara a chats pero realmente sera a users
+  login(provider: string) {
+    this._cs.login(provider).then(() => {
+      this.registerUser(this._cs.user);
+    });
+  }
+
+  registerUser(user: any) {
+    this._cs.registerUser(user).then(() => {
       this._router.navigate( ['chat'] );
     });
   }

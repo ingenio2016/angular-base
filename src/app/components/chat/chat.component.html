@@ -1,35 +1,17 @@
-<div class="chat">
-  <div class="chat-container">
-    <div class="user-bar">
-      <div class="avatar">
-        <img src="https://avatars2.githubusercontent.com/u/398893?s=128" alt="Avatar">
-      </div>
-      <div class="name">
-                <span>Joel Ramirez</span>
-                <span class="status">online</span>
-              </div>
-
-              <div class="actions">
-                <i (click)="logout()" class="zmdi zmdi-account-box"></i>
-              </div>
-    </div>
-    <div class="conversation">
-      <div class="conversation-container" id="messages-list">
-        <div class="message sent" *ngFor="let chat of _cs.chats">
-                  {{chat.message}}
+<div class="row">
+  <div class="col-md-4 .ml-md-auto">
+    <app-users></app-users>
+  </div>
+  <div class="col-md-8 .ml-md-auto">
+    <div class="chat">
+      <div class="chat-container">
+        <!-- UserBar -->
+        <app-header></app-header>
+        <div class="conversation">
+          <app-body></app-body>
+          <app-form-message></app-form-message>
         </div>
       </div>
-
-      <form class="conversation-compose">
-        <div class="emoji">
-        </div>
-        <input type="text" class="input-msg" name="message" [(ngModel)]="message" placeholder="Type a message" autocomplete="off" autofocus>
-        <button (click)="send_message()" class="send">
-            <div class="circle">
-              <i class="zmdi zmdi-mail-send"></i>
-            </div>
-          </button>
-      </form>
     </div>
   </div>
 </div>

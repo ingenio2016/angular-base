@@ -1,0 +1,48 @@
+//Vars
+$maxWidthPercent: 100%;
+$whatsAppBackground: #005e54;
+/* User Bar */
+.user-bar {
+  height: 60px;
+  background: $whatsAppBackground;
+  color: #fff;
+  padding: 0 8px;
+  font-size: 24px;
+  position: relative;
+  div {
+    float: left;
+    transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+  };
+  .avatar {
+    margin: 0 0 0 5px;
+    width: 50px;
+    height: 50px;
+    img {
+      border-radius: 50%;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+      display: block;
+      width: $maxWidthPercent;
+    }
+  };
+  .name {
+    font-size: 17px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    letter-spacing: 0.3px;
+    margin: 0 0 0 8px;
+    overflow: hidden;
+    white-space: nowrap;
+  };
+  .status {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0;
+  };
+  .actions {
+    float: right;
+    margin: 0 0 0 20px;
+  }
+}

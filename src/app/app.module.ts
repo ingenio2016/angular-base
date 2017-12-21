@@ -11,13 +11,16 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { ChatComponent } from './components/chat/chat.component';
 import { LoginComponent } from './components/login/login.component';
-import { UsersComponent } from './components/users/users.component';
+import { UsersComponent } from './components/chat/users/users.component';
 
-//Routes Import
+// Routes Import
 import { APP_ROUTING } from './app.routes';
 
-//Providers/Services
+// Providers/Services
 import {ChatService} from './providers/chat.service';
+import { HeaderComponent } from './components/chat/header/header.component';
+import { BodyComponent } from './components/chat/body/body.component';
+import { FormMessageComponent } from './components/chat/form-message/form-message.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import {ChatService} from './providers/chat.service';
     AppComponent,
     ChatComponent,
     LoginComponent,
-    UsersComponent
+    UsersComponent,
+    HeaderComponent,
+    BodyComponent,
+    FormMessageComponent
   ],
   imports: [
     BrowserModule,

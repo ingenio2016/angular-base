@@ -1,8 +1,9 @@
 <div class="user-bar">
   <div class="avatar">
-    <img src="https://avatars2.githubusercontent.com/u/398893?s=128" alt="Avatar">
+    <img [src]="_chatService.user.photo" alt="Avatar">
   </div>
 </div>
+<div class="user-list-container">
 <div class="userlist" id="userlist">
 <ul>
 <li>
@@ -42,4 +43,5 @@
   </div>
 </li>
 </ul>
+</div>
 </div>
