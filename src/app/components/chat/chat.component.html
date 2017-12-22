@@ -1,10 +1,11 @@
-<div class="row">
-  <div class="col-md-4 .ml-md-auto">
-    <nav id="sidebar">
-      <app-users></app-users>
-    </nav>
-  </div>
-  <div class="col-md-8 .ml-md-auto">
+<div class="wrapper">
+  <nav id="sidebar" [className]="sidebarActive">
+    <app-users></app-users>
+  </nav>
+  <div id="content">
+    <button type="button" (click)="SidebarTocgle()" class="btn btn-info">
+      Toggle Sidebar
+    </button>
     <div class="chat">
       <div class="chat-container">
         <!-- UserBar -->
@@ -17,3 +18,4 @@
     </div>
   </div>
 </div>
+

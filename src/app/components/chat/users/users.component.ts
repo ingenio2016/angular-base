@@ -8,7 +8,6 @@ import { ChatService } from '../../../providers/chat.service';
 })
 export class UsersComponent implements OnInit {
   private users: any[] = [];
-  public user: any[] = [];
   constructor( private _chatService: ChatService ) {
     this._chatService.loadUsers()
       .subscribe((users) => {
@@ -27,7 +26,7 @@ export class UsersComponent implements OnInit {
 
     // Load Chat Conversation
     this._chatService.loadMessages()
-      .subscribe((chats) => {
+      .subscribe(() => {
         /*setTimeout(() => {
           if (this.scrollElement.scrollHeight != undefined) {
             this.scrollElement.scrollTop = this.scrollElement.scrollHeight;

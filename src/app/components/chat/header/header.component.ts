@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  logout(user: any) {
-    this._chatService.logout(user);
+  logout() {
+    this._chatService.logout();
   }
 }

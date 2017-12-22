@@ -31,3 +31,36 @@ $whatsAppBackground: #005e54;
 }
 
 
+// SideBar
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+#sidebar {
+  min-width: 300px;
+  max-width: 300px;
+  &active {
+    margin-left: -300px;
+  };
+  transition: all 0.3s;
+}
+
+#content {
+  padding: 0px 0px;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -300px;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+}
+
+
+
+
+

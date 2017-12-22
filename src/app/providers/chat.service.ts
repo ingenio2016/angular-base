@@ -44,6 +44,7 @@ export class ChatService {
   }
 
   loadMessages() {
+    console.log(this.userToChat);
     this.chatsCollection = this.afs
       .collection<any>('chats', ref => ref
         .where('receiver', '==', this.user.uid)
@@ -71,6 +72,7 @@ export class ChatService {
   }
 
   loadChatUser(userChat: any) {
+    console.log(userChat);
     return this.userToChat = userChat;
   }
 
@@ -114,13 +116,8 @@ export class ChatService {
     }
   }
 
-  logout(user: any) {
-
-    this.userCollection.doc(this.user.userid).delete()
-      .then(() => {
-        console.log('user deleted');
-        this.afAuth.auth.signOut();
-      });
+  logout() {
+    this.afAuth.auth.signOut();
   }
 
 }
