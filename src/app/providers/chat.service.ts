@@ -26,6 +26,7 @@ export class ChatService {
   public users: any[] = [];
   public user: any = {};
   public userToChat: any[] = [];
+  public sidebarActive: string = '';
 
   constructor( private afs: AngularFirestore,
                public afAuth: AngularFireAuth,
@@ -118,6 +119,15 @@ export class ChatService {
 
   logout() {
     this.afAuth.auth.signOut();
+  }
+
+  SidebarTogle() {
+    if (this.sidebarActive === '') {
+      this.sidebarActive = 'active';
+    }else {
+      this.sidebarActive = '';
+    }
+    return this.sidebarActive;
   }
 
 }

@@ -34,8 +34,8 @@ $whatsAppBackground: #005e54;
 // SideBar
 
 .wrapper {
-  display: flex;
   align-items: stretch;
+  display: flex;
 }
 
 #sidebar {
@@ -45,10 +45,12 @@ $whatsAppBackground: #005e54;
     margin-left: -300px;
   };
   transition: all 0.3s;
+  float: left;
 }
 
 #content {
-  padding: 0px 0px;
+  float: right;
+  width: 100%;
 }
 
 @media (max-width: 768px) {

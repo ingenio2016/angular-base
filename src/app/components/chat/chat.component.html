@@ -1,11 +1,8 @@
 <div class="wrapper">
-  <nav id="sidebar" [className]="sidebarActive">
+  <nav id="sidebar" [className]="_cs.sidebarActive">
     <app-users></app-users>
   </nav>
   <div id="content">
-    <button type="button" (click)="SidebarTocgle()" class="btn btn-info">
-      Toggle Sidebar
-    </button>
     <div class="chat">
       <div class="chat-container">
         <!-- UserBar -->

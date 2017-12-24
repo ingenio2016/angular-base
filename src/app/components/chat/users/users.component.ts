@@ -27,11 +27,7 @@ export class UsersComponent implements OnInit {
     // Load Chat Conversation
     this._chatService.loadMessages()
       .subscribe(() => {
-        /*setTimeout(() => {
-          if (this.scrollElement.scrollHeight != undefined) {
-            this.scrollElement.scrollTop = this.scrollElement.scrollHeight;
-          }
-        }, 20);*/
+        this._chatService.SidebarTogle();
       });
   }
 }

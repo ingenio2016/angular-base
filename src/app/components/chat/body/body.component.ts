@@ -9,7 +9,8 @@ export class BodyComponent implements OnInit {
   // Var declarations
 
   scrollElement: any;
-  constructor( private _chatService: ChatService ) {}
+  constructor( private _chatService: ChatService ) {
+  }
 
   ngOnInit() {
     this.scrollElement = document.getElementById('messages-list');
